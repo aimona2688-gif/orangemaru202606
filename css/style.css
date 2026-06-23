@@ -1,0 +1,233 @@
+:root {
+  --bakery-ink: #2d261f;
+  --bakery-muted: #7b7169;
+  --bakery-line: #ddd4ca;
+  --bakery-cream: #fffaf4;
+  --bakery-peach: #f4c5a3;
+  --bakery-peach-dark: #d28d61;
+}
+
+body {
+  color: var(--bakery-ink);
+  font-family: "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+  background: #fff;
+  letter-spacing: 0;
+}
+
+.navbar {
+  min-height: 74px;
+  border-bottom: 1px solid var(--bakery-line);
+  background: rgba(255, 255, 255, .96);
+}
+
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  color: var(--bakery-ink);
+  font-weight: 800;
+  letter-spacing: 0;
+  text-decoration: none;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+  color: var(--bakery-peach-dark);
+}
+
+.brand-logo {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+}
+
+.nav-link {
+  color: var(--bakery-ink);
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding-inline: 1.5rem !important;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--bakery-peach-dark);
+}
+
+.hero-slide {
+  position: relative;
+  height: min(58vw, 560px);
+  min-height: 320px;
+  overflow: hidden;
+  background: #f7efe6;
+}
+
+.hero-slide::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(90deg, rgba(0, 0, 0, .18), rgba(255, 255, 255, .05));
+  pointer-events: none;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.hero-slide-cover img {
+  object-fit: cover;
+}
+
+.hero-title {
+  position: absolute;
+  right: clamp(1.5rem, 6vw, 5rem);
+  bottom: clamp(1.5rem, 5vw, 4rem);
+  z-index: 1;
+  color: #17100c;
+  font-family: "Segoe Print", "Comic Sans MS", cursive;
+  font-size: clamp(2rem, 5.4vw, 4.8rem);
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: right;
+  text-shadow: 0 2px 16px rgba(255, 255, 255, .78);
+}
+
+.section-space {
+  padding-block: clamp(3.5rem, 8vw, 6rem);
+}
+
+@media (max-width: 767.98px) {
+  .hero-title {
+    right: 1rem;
+    left: 1rem;
+    bottom: 2rem;
+    font-size: clamp(2rem, 11vw, 3.2rem);
+    text-align: center;
+  }
+}
+
+.section-title {
+  margin-bottom: 2rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.about-image {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--bakery-line);
+}
+
+.about-copy {
+  color: var(--bakery-muted);
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
+.product-section {
+  background: var(--bakery-cream);
+  border-block: 1px solid #f3e7dc;
+}
+
+.product-card {
+  height: 100%;
+  border: 1px solid var(--bakery-line);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 14px 36px rgba(55, 38, 25, .08);
+}
+
+.product-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  background: #eee4da;
+}
+
+.card-title {
+  font-weight: 800;
+}
+
+.card-text {
+  color: var(--bakery-muted);
+  line-height: 1.75;
+}
+
+.btn-bakery {
+  --bs-btn-color: #6f6258;
+  --bs-btn-bg: var(--bakery-peach);
+  --bs-btn-border-color: #9e806e;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--bakery-peach-dark);
+  --bs-btn-hover-border-color: var(--bakery-peach-dark);
+  min-width: 150px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.footer {
+  padding-block: 3rem 1.5rem;
+  background: #fff;
+  border-top: 1px solid var(--bakery-line);
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .75rem;
+  font-size: 1.45rem;
+  font-weight: 900;
+}
+
+.footer-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.social-link {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+  border: 1px solid var(--bakery-line);
+  border-radius: 50%;
+  font-size: .95rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: .2s ease;
+}
+
+.social-link:hover,
+.social-link:focus {
+  color: #fff;
+  border-color: var(--bakery-peach-dark);
+  background: var(--bakery-peach-dark);
+}
+
+.company-list {
+  color: var(--bakery-muted);
+  line-height: 2;
+}
+
+.copyright {
+  color: #92877e;
+  font-size: .95rem;
+}
+
+@media (max-width: 767.98px) {
+  .nav-link {
+    padding-block: .75rem !important;
+  }
+
+  .about-image {
+    height: 260px;
+  }
+}
