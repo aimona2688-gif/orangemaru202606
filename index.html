@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="zh-Hant">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,14 +8,14 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <!-- 以下為Google tag (gtag.js) GA4全域-->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RRDT4T8T4H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RRDT4T8T4H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-RRDT4T8T4H');
-</script>
+    gtag('config', 'G-RRDT4T8T4H');
+  </script>
 
 </head>
 
@@ -25,7 +26,8 @@
         <img class="brand-logo" src="images/logo.png" alt="圓橙橙烘焙坊 Logo">
         <span>圓橙橙烘焙坊</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="切換選單">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="切換選單">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-center" id="mainNav">
@@ -42,7 +44,8 @@
   <main id="home">
     <section id="bakeryCarousel" class="carousel slide" data-bs-ride="carousel" aria-label="圓橙橙烘焙坊輪播圖">
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#bakeryCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="第 1 張"></button>
+        <button type="button" data-bs-target="#bakeryCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+          aria-label="第 1 張"></button>
         <button type="button" data-bs-target="#bakeryCarousel" data-bs-slide-to="1" aria-label="第 2 張"></button>
         <button type="button" data-bs-target="#bakeryCarousel" data-bs-slide-to="2" aria-label="第 3 張"></button>
         <button type="button" data-bs-target="#bakeryCarousel" data-bs-slide-to="3" aria-label="第 4 張"></button>
@@ -68,6 +71,7 @@
         <div class="carousel-item">
           <div class="hero-slide">
             <img src="images/ritae-tomatoes-5325850%20-%20複製.jpg" alt="義式油漬番茄">
+
           </div>
         </div>
         <div class="carousel-item">
@@ -76,10 +80,12 @@
           </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#bakeryCarousel" data-bs-slide="prev" aria-label="上一張">
+      <button class="carousel-control-prev" type="button" data-bs-target="#bakeryCarousel" data-bs-slide="prev"
+        aria-label="上一張">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#bakeryCarousel" data-bs-slide="next" aria-label="下一張">
+      <button class="carousel-control-next" type="button" data-bs-target="#bakeryCarousel" data-bs-slide="next"
+        aria-label="下一張">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
       </button>
     </section>
@@ -114,7 +120,8 @@
               <div class="card-body d-flex flex-column text-center">
                 <h3 class="card-title h5">酸種麵包</h3>
                 <p class="card-text flex-grow-1">天然酵母慢慢發酵，外皮酥香、內裡柔韌，帶著微酸與麥香，是每日餐桌的經典選擇。</p>
-                <a class="btn btn-bakery mx-auto" href="#">瞭解更多</a>
+
+                <a href="javascript:void(0)" type="button" class="btnstyle" id="btnstyle">加入購物車</a>
               </div>
             </article>
           </div>
@@ -135,6 +142,7 @@
                 <h3 class="card-title h5">義式青醬</h3>
                 <p class="card-text flex-grow-1">以新鮮香草、橄欖油與堅果調和，香氣清爽，搭配麵包、起司或輕食都很合適。</p>
                 <a class="btn btn-bakery mx-auto" href="#">瞭解更多</a>
+
               </div>
             </article>
           </div>
@@ -188,5 +196,14 @@
   </footer>
 
   <script src="js/bootstrap.bundle.min.js"></script>
+  <script>
+    // addEventListener 效果
+    var abc = document.querySelector(".btnstyle");
+    abc.addEventListener("click", function (event) {
+      event.preventDefault();
+      alert("您已將商品加入購物車");
+    }, false);
+  </script>
 </body>
+
 </html>

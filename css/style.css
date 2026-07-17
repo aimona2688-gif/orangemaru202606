@@ -231,3 +231,18 @@ body {
     height: 260px;
   }
 }
+/* 購物車 */
+a.btnstyle {
+  color: white;
+  background-color: #007bff;
+  font-size: 18px;
+  padding: 10px 16px;
+  border: 1px solid #007bff;
+  border-radius: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1.6;
+}
+a.btnstyle:hover {
+  background-color:#00438a;
+}

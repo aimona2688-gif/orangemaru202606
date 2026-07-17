@@ -187,3 +187,12 @@ product-sourdough.jpg
 - Bootstrap 原始檔案請避免直接修改，方便未來升級或替換。
 - 不使用 CDN，新增第三方套件時也建議放在本地資料夾。
 - 若新增其他頁面，請沿用相同 CSS/JS 引用方式。
+
+## github 
+https://github.com/aimona2688-gif/orangemaru202606
+
+### HTTPS
+git@github.com:aimona2688-gif/orangemaru202606.git
+
+### 對外發布網址
+https://aimona2688-gif.github.io/orangemaru202606/
