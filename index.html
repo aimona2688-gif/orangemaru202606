@@ -208,12 +208,12 @@
 
         var productId = abc.getAttribute("data-product-id") || "sourdough-01";
         var productName = abc.getAttribute("data-product-name") || "酸種麵包";
-        var price = Number(abc.getAttribute("data-price") || 220);
+        var price = Number(abc.getAttribute("data-price") || 1234);
 
         if (typeof gtag === "function") {
           gtag("event", "add_to_cart", {
             currency: "TWD",
-            value: price,
+            value: 1234,
             items: [{
               item_id: productId,
               item_name: productName,
