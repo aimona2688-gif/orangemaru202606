@@ -205,23 +205,40 @@
         return null;
       }
 
-      var productId = button.getAttribute("data-product-id") || "sourdough-01";
+      var productId = button.getAttribute("data-product-id") || "SKU_12345";
       var productName = button.getAttribute("data-product-name") || "酸種麵包";
       var price = Number(button.getAttribute("data-price") || 1234);
 
       return {
         currency: "TWD",
         value: 1234,
+        coupon: "SUMMER_FUN",
+        shipping_tier: "Ground",
         items: [{
           item_id: productId,
           item_name: productName,
+          affiliation: "Google Merchandise Store",
+          coupon: "SUMMER_FUN",
+          discount: 2.22,
+          index: 0,
+          item_brand: "Google",
+          item_category: "Apparel",
+          item_category2: "Adult",
+          item_category3: "Shirts",
+          item_category4: "Crew",
+          item_category5: "Short sleeve",
+          item_list_id: "related_products",
+          item_list_name: "Related Products",
+          item_variant: "green",
+          location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
           price: price,
-          quantity: 1
+          google_business_vertical: "retail",
+          quantity: 3
         }]
       };
     }
 
-    function trackGa4ProductEvent(eventName, button) {
+    function trackGa4ProductEvent(button) {
       if (typeof gtag !== "function") {
         return;
       }
@@ -231,18 +248,16 @@
         return;
       }
 
-      gtag("event", eventName, payload);
+      gtag("event", "add_to_cart", payload);
     }
 
     document.addEventListener("DOMContentLoaded", function () {
       var productButton = document.querySelector(".btnstyle");
 
       if (productButton) {
-        trackGa4ProductEvent("view_item", productButton);
-
         productButton.addEventListener("click", function (event) {
           event.preventDefault();
-          trackGa4ProductEvent("add_to_cart", productButton);
+          trackGa4ProductEvent(productButton);
           alert("您已將商品加入購物車");
         }, false);
       }
