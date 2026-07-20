@@ -200,64 +200,26 @@
 
   <script src="js/bootstrap.bundle.min.js"></script>
   <script>
-    function getProductPayload(button) {
-      if (!button) {
-        return null;
-      }
-
-      var productId = button.getAttribute("data-product-id") || "SKU_12345";
-      var productName = button.getAttribute("data-product-name") || "酸種麵包";
-      var price = Number(button.getAttribute("data-price") || 1234);
-
-      return {
-        currency: "TWD",
-        value: 1234,
-        coupon: "SUMMER_FUN",
-        shipping_tier: "Ground",
-        items: [{
-          item_id: productId,
-          item_name: productName,
-          affiliation: "Google Merchandise Store",
-          coupon: "SUMMER_FUN",
-          discount: 2.22,
-          index: 0,
-          item_brand: "Google",
-          item_category: "Apparel",
-          item_category2: "Adult",
-          item_category3: "Shirts",
-          item_category4: "Crew",
-          item_category5: "Short sleeve",
-          item_list_id: "related_products",
-          item_list_name: "Related Products",
-          item_variant: "green",
-          location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
-          price: price,
-          google_business_vertical: "retail",
-          quantity: 3
-        }]
-      };
-    }
-
-    function trackGa4ProductEvent(button) {
-      if (typeof gtag !== "function") {
-        return;
-      }
-
-      var payload = getProductPayload(button);
-      if (!payload) {
-        return;
-      }
-
-      gtag("event", "add_to_cart", payload);
-    }
-
     document.addEventListener("DOMContentLoaded", function () {
       var productButton = document.querySelector(".btnstyle");
 
       if (productButton) {
         productButton.addEventListener("click", function (event) {
           event.preventDefault();
-          trackGa4ProductEvent(productButton);
+
+          if (typeof gtag === "function") {
+            gtag("event", "add_to_cart", {
+              currency: "TWD",
+              value: 1234,
+              items: [{
+                item_id: "SKU_12345",
+                item_name: "酸種麵包",
+                price: 1234,
+                quantity: 1
+              }]
+            });
+          }
+
           alert("您已將商品加入購物車");
         }, false);
       }
