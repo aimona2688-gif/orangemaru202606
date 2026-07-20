@@ -121,7 +121,10 @@
                 <h3 class="card-title h5">酸種麵包</h3>
                 <p class="card-text flex-grow-1">天然酵母慢慢發酵，外皮酥香、內裡柔韌，帶著微酸與麥香，是每日餐桌的經典選擇。</p>
 
-                <a href="javascript:void(0)" type="button" class="btnstyle" id="btnstyle">加入購物車</a>
+                <a href="javascript:void(0)" type="button" class="btnstyle" id="btnstyle"
+                  data-product-id="sourdough-01"
+                  data-product-name="酸種麵包"
+                  data-price="220">加入購物車</a>
               </div>
             </article>
           </div>
@@ -199,10 +202,30 @@
   <script>
     // addEventListener 效果
     var abc = document.querySelector(".btnstyle");
-    abc.addEventListener("click", function (event) {
-      event.preventDefault();
-      alert("您已將商品加入購物車");
-    }, false);
+    if (abc) {
+      abc.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        var productId = abc.getAttribute("data-product-id") || "sourdough-01";
+        var productName = abc.getAttribute("data-product-name") || "酸種麵包";
+        var price = Number(abc.getAttribute("data-price") || 220);
+
+        if (typeof gtag === "function") {
+          gtag("event", "add_to_cart", {
+            currency: "TWD",
+            value: price,
+            items: [{
+              item_id: productId,
+              item_name: productName,
+              price: price,
+              quantity: 1
+            }]
+          });
+        }
+
+        alert("您已將商品加入購物車");
+      }, false);
+    }
   </script>
 </body>
 
