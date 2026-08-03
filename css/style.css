@@ -149,6 +149,15 @@ body {
   line-height: 1.9;
 }
 
+.line-add-friend {
+  display: inline-block;
+  margin-top: 1.5rem;
+}
+
+.line-add-friend img {
+  display: block;
+}
+
 .product-section {
   background: var(--bakery-cream);
   border-block: 1px solid #f3e7dc;
@@ -189,6 +198,29 @@ body {
   min-width: 150px;
   border-radius: 999px;
   font-weight: 700;
+}
+
+.embedded-content {
+  padding-top: 1.5rem;
+}
+
+.embed-panel {
+  padding: 1.5rem;
+  border: 1px solid var(--bakery-line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 14px 36px rgba(55, 38, 25, .06);
+}
+
+.embed-frame {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.embed-frame iframe {
+  display: block;
+  max-width: 100%;
 }
 
 .footer {
@@ -250,6 +282,10 @@ body {
 
   .about-image {
     height: 260px;
+  }
+
+  .embed-panel {
+    padding: 1rem;
   }
 }
 /* 購物車 */
